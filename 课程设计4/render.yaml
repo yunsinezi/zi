@@ -1,0 +1,12 @@
+providers:
+  - python
+
+build:
+  env:
+    PYTHON_VERSION: "3.10"
+  commands:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+
+run:
+  command: gunicorn main:app --host 0.0.0.0 --port $PORT
